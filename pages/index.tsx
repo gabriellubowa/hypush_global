@@ -3,6 +3,7 @@ import { DashMark, SectionRule, TurningPlusMark } from "../components/decor/mark
 import { BRAND } from "../constants/brand";
 import { CallToAction, PrimaryButton } from "../components/CallToAction";
 import Link from "next/link";
+import METADATA from "../constants/metadata";
 import { OrbitingListener } from "../components/OrbitingListener";
 import React from "react";
 import { SiteLayout } from "../components/layout/SiteLayout";
@@ -92,7 +93,7 @@ const Hero = () => (
 
 export default function Home() {
   return (
-    <SiteLayout>
+    <SiteLayout metadata={METADATA.HOME_PAGE} pageType="WebPage">
       <Hero />
       <WhatWeDo />
       <SectionRule />

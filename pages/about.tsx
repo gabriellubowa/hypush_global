@@ -40,7 +40,7 @@ const PILLARS = [
 
 export default function About() {
   return (
-    <SiteLayout title="About" metadata={METADATA.ABOUT_PAGE} fullBleed>
+    <SiteLayout title="About" metadata={METADATA.ABOUT_PAGE} fullBleed pageType="AboutPage">
       {/* Why Choose Us — The Infrastructure Advantage */}
       <section aria-labelledby="advantage-heading">
         <div className="mx-auto w-full max-w-[var(--page-max-width)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">

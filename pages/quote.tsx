@@ -52,7 +52,7 @@ const FormColumn = styled.section`
 
 export default function Quote() {
   return (
-    <SiteLayout title="Quote" metadata={METADATA.QUOTE_PAGE}>
+    <SiteLayout title="Get a Quote" metadata={METADATA.QUOTE_PAGE}>
       <Split>
         <IntroColumn aria-label="About this form">
           <PageIntro

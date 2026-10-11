@@ -20,6 +20,7 @@ const NAV: ReadonlyArray<NavItem> = [
     type: "menu",
     label: "Resources",
     items: [
+      { label: "Case Study", href: "/case-study" },
       { label: "Blog", href: "https://hypush.co/blog" },
       { label: "FAQ", href: "/faq" },
     ],

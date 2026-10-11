@@ -52,12 +52,21 @@ interface Props {
   /** Edge-to-edge main content (roster grids). Footer stays constrained. */
   fullBleed?: boolean;
   jsonLd?: ReadonlyArray<Record<string, unknown>>;
+  /** Schema.org WebPage subtype, e.g. AboutPage / ContactPage / CollectionPage. */
+  pageType?: string;
   children: React.ReactNode;
 }
 
-export const SiteLayout = ({ title, metadata, fullBleed = false, jsonLd, children }: Props) => (
+export const SiteLayout = ({
+  title,
+  metadata,
+  fullBleed = false,
+  jsonLd,
+  pageType,
+  children,
+}: Props) => (
   <Shell>
-    <Seo title={title} metadata={metadata} jsonLd={jsonLd} />
+    <Seo title={title} metadata={metadata} jsonLd={jsonLd} pageType={pageType} />
     {/* Exact AMW placement: header first, ticker below header */}
     <Header />
     <NewsTicker />

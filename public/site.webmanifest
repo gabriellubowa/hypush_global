@@ -1,21 +1,35 @@
 {
+  "id": "/",
   "name": "HYPush",
   "short_name": "HYPush",
-  "description": "Music marketing, PR, distribution and promotion.",
+  "description": "Music marketing, PR, distribution and promotion for artists, labels and brands.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#f00809",
+  "background_color": "#ececec",
+  "categories": ["business", "music", "marketing"],
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/android-chrome-256x256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
-  ],
-  "start_url": "/",
-  "theme_color": "#f00809",
-  "background_color": "#ececec",
-  "display": "standalone"
+  ]
 }

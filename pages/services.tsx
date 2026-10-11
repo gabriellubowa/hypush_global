@@ -2,7 +2,8 @@ import { SERVICE_GROUPS } from "../data/services";
 import { CallToAction } from "../components/CallToAction";
 import { SiteLayout } from "../components/layout/SiteLayout";
 import METADATA from "../constants/metadata";
-import { PageIntro } from "../components/PageIntro";
+import { servicesJsonLd } from "../lib/seo/jsonLd";
+import { PageIntro, TitleMark } from "../components/PageIntro";
 import React from "react";
 import styled from "styled-components";
 
@@ -108,9 +109,18 @@ const pad = (n: number) => String(n).padStart(2, "0");
 export default function Services() {
   let counter = 0;
   return (
-    <SiteLayout title="Services" metadata={METADATA.SERVICES_PAGE}>
+    <SiteLayout
+      title="Services"
+      metadata={METADATA.SERVICES_PAGE}
+      pageType="CollectionPage"
+      jsonLd={[servicesJsonLd()]}
+    >
         <PageIntro
-          title="Everything a Release Needs."
+          title={
+            <>
+              Everything a <TitleMark>Brand Needs.</TitleMark>
+            </>
+          }
           lead="Hire us for one piece or the whole campaign. Every service below can run on its own or alongside the others, planned against the same goal."
         />
         {SERVICE_GROUPS.map((group) => (

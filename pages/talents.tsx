@@ -6,6 +6,7 @@ import {
   TalentRosterItem,
 } from "../components/talents/TalentRoster";
 import { TALENTS } from "../data/talents";
+import { talentsJsonLd } from "../lib/seo/jsonLd";
 
 const artists: TalentRosterItem[] = TALENTS.map((talent) => ({
   id: talent.slug,
@@ -16,7 +17,12 @@ const artists: TalentRosterItem[] = TALENTS.map((talent) => ({
 
 export default function Talents() {
   return (
-    <SiteLayout title="Talents" metadata={METADATA.TALENTS_PAGE}>
+    <SiteLayout
+      title="Talents"
+      metadata={METADATA.TALENTS_PAGE}
+      pageType="CollectionPage"
+      jsonLd={[talentsJsonLd()]}
+    >
       <TalentRoster artists={artists} headline="Featured Talents" />
     </SiteLayout>
   );

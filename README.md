@@ -26,7 +26,7 @@ localhost.
 | `/services` | The 11 services in three disciplines |
 | `/faq` | Questions grouped by topic |
 | `/start-a-project` | Multi-step project request form |
-| `/privacy-policy`, `/terms-of-service` | Draft placeholders (see below) |
+| `/privacy`, `/terms` | Privacy Policy and Terms of Service |
 | `/api/project-requests` | Receives form submissions |
 
 ## Where things live

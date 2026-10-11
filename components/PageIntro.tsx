@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 type Variant = "page" | "split";
@@ -38,6 +38,17 @@ const StyledTitle = styled.h1<{ $variant: Variant }>`
   margin: 0;
 `;
 
+/** White-on-accent block for a punchy phrase inside a PageIntro title. */
+export const TitleMark = styled.span`
+  display: inline;
+  padding: 0.06em 0.18em 0.08em;
+  margin: 0 -0.04em;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+`;
+
 const StyledLead = styled.p`
   font-size: var(--text-lead);
   color: var(--color-secondary);
@@ -47,7 +58,7 @@ const StyledLead = styled.p`
 
 interface Props {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   lead?: string;
   variant?: Variant;
 }

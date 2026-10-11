@@ -229,7 +229,7 @@ export const ProjectForm = () => {
             </Honeypot>
             <Notice>
               By sending this you agree to HYPush contacting you about your project. See our{" "}
-              <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              <Link href="/privacy" target="_blank" rel="noopener noreferrer">
                 privacy policy
               </Link>
               .

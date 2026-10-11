@@ -47,4 +47,14 @@ export const TALENTS: ReadonlyArray<ITalent> = [
     name: "Emperor Orlandoh",
     imageSrc: "/talents/emperor-orlandoh.jpg",
   },
+  {
+    slug: "topboy-mc",
+    name: "TopBoy MC",
+    imageSrc: "/talents/topboy-mc.jpg",
+  },
+  {
+    slug: "sqoop-larma",
+    name: "Sqoop Larma",
+    imageSrc: "/talents/sqoop-larma.jpg",
+  },
 ];

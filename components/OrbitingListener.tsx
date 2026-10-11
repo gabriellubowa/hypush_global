@@ -23,6 +23,16 @@ const counterSpin = keyframes`
   to   { transform: rotate(-360deg); }
 `;
 
+// Orbit + upright cancel in ONE keyframe so Safari cannot desync two clocks.
+const iconOrbit = keyframes`
+  from {
+    transform: rotate(0deg) translateX(${ORBIT_R}px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(${ORBIT_R}px) rotate(-360deg);
+  }
+`;
+
 const pulse = keyframes`
   0%, 100% { opacity: 0.25; }
   50%      { opacity: 1; }
@@ -77,22 +87,10 @@ const Container = styled.div`
     stroke: none;
   }
 
-  /* Every rotating group carries an invisible guard circle centred on its
-     pivot, so fill-box + centre is exactly the pivot point. */
-  .orbit,
   .ring,
-  .ring-reverse,
-  .upright {
+  .ring-reverse {
     transform-box: fill-box;
     transform-origin: center;
-  }
-
-  .orbit {
-    animation: ${spin} ${ORBIT_SECONDS}s linear infinite;
-  }
-
-  .upright {
-    animation: ${counterSpin} ${ORBIT_SECONDS}s linear infinite;
   }
 
   .ring {
@@ -101,6 +99,19 @@ const Container = styled.div`
 
   .ring-reverse {
     animation: ${counterSpin} ${ORBIT_SECONDS * 2}s linear infinite;
+  }
+
+  /* Dashed path under the icons — cosmetic only, may drift from icons slightly. */
+  .orbit-path {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ${spin} ${ORBIT_SECONDS}s linear infinite;
+  }
+
+  .icon-orbit {
+    transform-box: view-box;
+    transform-origin: ${C}px ${C}px;
+    animation: ${iconOrbit} ${ORBIT_SECONDS}s linear infinite;
   }
 
   .wave {
@@ -127,8 +138,8 @@ const Container = styled.div`
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .orbit,
-    .upright,
+    .orbit-path,
+    .icon-orbit,
     .ring,
     .ring-reverse,
     .wave,
@@ -138,6 +149,11 @@ const Container = styled.div`
     .knob-d,
     .listener {
       animation: none;
+    }
+
+    .icon-orbit {
+      /* Park each icon at its start angle without animating. */
+      transform: rotate(var(--start-angle, 0deg)) translateX(${ORBIT_R}px) rotate(calc(-1 * var(--start-angle, 0deg)));
     }
   }
 `;
@@ -322,8 +338,8 @@ export const OrbitingListener = () => (
 
       <Listener />
 
-      {/* the orbit: icons ride the dashed ring and stay upright */}
-      <g className="orbit">
+      {/* Dashed ring (visual only). Icons use a locked orbit/upright keyframe. */}
+      <g className="orbit-path">
         <circle className="guard" cx={C} cy={C} r={ORBIT_R + 40} />
         <circle
           className="line"
@@ -333,22 +349,31 @@ export const OrbitingListener = () => (
           strokeDasharray="3 11"
           strokeWidth={2}
         />
-        {ICONS.map((Icon, i) => {
-          const angle = (i / ICONS.length) * Math.PI * 2 - Math.PI / 2;
-          const x = C + ORBIT_R * Math.cos(angle);
-          const y = C + ORBIT_R * Math.sin(angle);
-          return (
-            <g key={i} transform={`translate(${x.toFixed(2)} ${y.toFixed(2)})`}>
-              <g className="upright">
-                <circle className="guard" cx={0} cy={0} r={40} />
-                {/* knock out the dashed ring behind each icon */}
-                <circle cx={0} cy={0} r={36} fill="var(--color-background)" />
-                <Icon />
-              </g>
-            </g>
-          );
-        })}
       </g>
+
+      {ICONS.map((Icon, i) => {
+        const startAngleDeg = (i / ICONS.length) * 360 - 90;
+        const delaySeconds = -((i / ICONS.length) * ORBIT_SECONDS);
+        return (
+          <g
+            key={i}
+            className="icon-orbit"
+            style={
+              {
+                "--start-angle": `${startAngleDeg}deg`,
+                animationDelay: `${delaySeconds.toFixed(4)}s`,
+              } as React.CSSProperties
+            }
+          >
+            {/* Drawn at the SVG centre; the orbit keyframe pushes it out on +X. */}
+            <g transform={`translate(${C} ${C})`}>
+              <circle className="guard" cx={0} cy={0} r={40} />
+              <circle cx={0} cy={0} r={36} fill="var(--color-background)" />
+              <Icon />
+            </g>
+          </g>
+        );
+      })}
     </svg>
   </Container>
 );

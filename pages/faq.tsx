@@ -30,7 +30,12 @@ interface Props {
 
 export default function Faq({ groups }: Props) {
   return (
-    <SiteLayout title="FAQ" metadata={METADATA.FAQ_PAGE} jsonLd={[faqPageJsonLd(groups)]}>
+    <SiteLayout
+      title="FAQ"
+      metadata={METADATA.FAQ_PAGE}
+      pageType="FAQPage"
+      jsonLd={[faqPageJsonLd(groups)]}
+    >
       <PageIntro
         eyebrow="FAQ"
         title="Questions, Answered."

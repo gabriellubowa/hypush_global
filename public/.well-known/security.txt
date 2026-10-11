@@ -1,0 +1,6 @@
+Contact: mailto:hello@hypush.co
+Expires: 2027-10-11T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://hypush.co/.well-known/security.txt
+Policy: https://hypush.co/privacy
+Acknowledgments: https://hypush.co/contact

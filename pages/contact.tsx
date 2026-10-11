@@ -79,7 +79,7 @@ const TextLink = styled(Link)`
 
 export default function Contact() {
   return (
-    <SiteLayout title="Contact" metadata={METADATA.CONTACT_PAGE}>
+    <SiteLayout title="Contact" metadata={METADATA.CONTACT_PAGE} pageType="ContactPage">
       <PageIntro
         title="How Can We Help?"
         lead="Our team is a call or email away. For a campaign quote, use the form — it takes a few minutes."

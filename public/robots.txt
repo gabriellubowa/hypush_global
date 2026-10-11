@@ -1,4 +1,7 @@
+# https://hypush.co/robots.txt
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /404
 
 Sitemap: https://hypush.co/sitemap.xml

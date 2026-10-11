@@ -365,7 +365,7 @@ export const Footer = () => {
       <Bottom>
         <MetaLine>
           Copyright © {new Date().getFullYear()} // HYPush <span aria-hidden="true">•</span>{" "}
-          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/privacy">Privacy Policy</Link>
           <span aria-hidden="true">•</span>
           <FooterThemeSwitch />
         </MetaLine>
