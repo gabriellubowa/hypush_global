@@ -124,7 +124,11 @@ export default function Services() {
           lead="Hire us for one piece or the whole campaign. Every service below can run on its own or alongside the others, planned against the same goal."
         />
         {SERVICE_GROUPS.map((group) => (
-          <StyledGroup key={group.slug} aria-labelledby={`group-${group.slug}`}>
+          <StyledGroup
+            key={group.slug}
+            aria-labelledby={`group-${group.slug}`}
+            data-aos="fade-up"
+          >
             <GroupHeading>
               <h2 id={`group-${group.slug}`}>{group.name}</h2>
               <p>{group.intro}</p>
@@ -133,7 +137,12 @@ export default function Services() {
               {group.services.map((service) => {
                 counter += 1;
                 return (
-                  <ServiceItem key={service.slug} id={service.slug}>
+                  <ServiceItem
+                    key={service.slug}
+                    id={service.slug}
+                    data-aos="fade-up"
+                    data-aos-delay="60"
+                  >
                     <Index aria-hidden="true">{pad(counter)}</Index>
                     <div>
                       <h3>{service.name}</h3>

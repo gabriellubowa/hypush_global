@@ -64,7 +64,7 @@ const Hero = () => (
       <EdgeMark>
         <TurningPlusMark />
       </EdgeMark>
-      <LeadPane $maxWidth="46%">
+      <LeadPane $maxWidth="46%" data-aos="fade-up">
         <HeroTitle id="hero-heading">
           Strategic hype. <em>Relentless push.</em>
         </HeroTitle>
@@ -80,7 +80,7 @@ const Hero = () => (
           <UnderlineLink href="/services">Explore Services</UnderlineLink>
         </HeroActions>
       </LeadPane>
-      <TrailPane $maxWidth="54%" $center>
+      <TrailPane $maxWidth="54%" $center data-aos="fade-left" data-aos-delay="120">
         <OrbitingListener />
       </TrailPane>
       <EdgeMark>

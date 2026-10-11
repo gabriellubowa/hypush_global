@@ -176,10 +176,16 @@ export const HowWeWork = () => (
       <DashMark />
     </EdgeMark>
     <Body>
-      <Heading id="how-heading">Listen. Plan. Push.</Heading>
+      <Heading id="how-heading" data-aos="fade-up">
+        Listen. Plan. Push.
+      </Heading>
       <Steps>
         {STEPS.map((step, index) => (
-          <Step key={step.title}>
+          <Step
+            key={step.title}
+            data-aos="fade-up"
+            data-aos-delay={String(80 + index * 100)}
+          >
             <Marker aria-hidden="true" $isFinal={index === STEPS.length - 1}>
               {index + 1}
             </Marker>
@@ -190,7 +196,9 @@ export const HowWeWork = () => (
           </Step>
         ))}
       </Steps>
-      <FaqButton href="/faq">Read the FAQ</FaqButton>
+      <FaqButton href="/faq" data-aos="fade-up">
+        Read the FAQ
+      </FaqButton>
     </Body>
     <EdgeMark>
       <TurningPlusMark />

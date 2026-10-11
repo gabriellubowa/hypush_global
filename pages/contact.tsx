@@ -86,30 +86,30 @@ export default function Contact() {
       />
 
       <Grid>
-        <Card aria-labelledby="contact-email">
+        <Card aria-labelledby="contact-email" data-aos="fade-up">
           <h2 id="contact-email">Email</h2>
           <p>
             <a href={`mailto:${BRAND.EMAIL}`}>{BRAND.EMAIL}</a>
           </p>
         </Card>
-        <Card aria-labelledby="contact-phone">
+        <Card aria-labelledby="contact-phone" data-aos="fade-up" data-aos-delay="80">
           <h2 id="contact-phone">Phone</h2>
           <p>
             <a href={BRAND.PHONE_HREF}>{BRAND.PHONE_LABEL}</a>
           </p>
         </Card>
-        <Card aria-labelledby="contact-office">
+        <Card aria-labelledby="contact-office" data-aos="fade-up" data-aos-delay="160">
           <h2 id="contact-office">Office</h2>
           <p>Kampala, Uganda</p>
         </Card>
       </Grid>
 
-      <Note>
+      <Note data-aos="fade-up">
         Prefer a structured brief? Start a quote and we&apos;ll come back with a
         plan and written numbers.
       </Note>
 
-      <Actions>
+      <Actions data-aos="fade-up">
         <PrimaryButton href={BRAND.CONTACT_URL}>
           {BRAND.CONTACT_LABEL} <span aria-hidden="true">→</span>
         </PrimaryButton>

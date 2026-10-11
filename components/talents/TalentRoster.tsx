@@ -36,7 +36,10 @@ export const TalentRoster = ({
     className="wrapper w-full bg-[var(--color-background)] text-[var(--color-text)]"
   >
     <div className="container mx-auto w-full max-w-[960px] px-4 py-8 sm:px-6 sm:py-10 lg:px-0 lg:pb-[75px] lg:pt-[30px]">
-      <h1 className="page-title m-0 pb-10 text-center text-4xl font-black leading-none tracking-tight sm:text-[40px] sm:leading-10">
+      <h1
+        className="page-title m-0 pb-10 text-center text-4xl font-black leading-none tracking-tight sm:text-[40px] sm:leading-10"
+        data-aos="fade-up"
+      >
         {headline}
       </h1>
 
@@ -45,7 +48,7 @@ export const TalentRoster = ({
         aspect-square + object-cover keeps mixed press shots flush.
       */}
       <ul className="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
-        {artists.map((artist) => {
+        {artists.map((artist, index) => {
           const media = artist.imageSrc ? (
             <Image
               src={artist.imageSrc}
@@ -77,7 +80,12 @@ export const TalentRoster = ({
           );
 
           return (
-            <li key={artist.id} className="min-w-0">
+            <li
+              key={artist.id}
+              className="min-w-0"
+              data-aos="fade-up"
+              data-aos-delay={String((index % 6) * 60)}
+            >
               {artist.href ? (
                 <Link
                   href={artist.href}

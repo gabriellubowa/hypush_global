@@ -181,7 +181,12 @@ const Tag = styled(Link)`
 const DisciplineCard = ({ group, index }: { group: IServiceGroup; index: number }) => {
   const titleId = `discipline-${group.slug}`;
   return (
-    <Card $area={AREAS[index]} aria-labelledby={titleId}>
+    <Card
+      $area={AREAS[index]}
+      aria-labelledby={titleId}
+      data-aos="fade-up"
+      data-aos-delay={String(100 + index * 90)}
+    >
       <CardNumber className="number">{String(index + 1).padStart(2, "0")}</CardNumber>
       <Title id={titleId}>{group.name}</Title>
       <Description>{group.intro}</Description>
@@ -202,7 +207,7 @@ export const WhatWeDo = () => (
       <RingMark />
     </EdgeMark>
     <Grid>
-      <Intro>
+      <Intro data-aos="fade-up">
         <Heading id="what-heading">One Team, Three Disciplines.</Heading>
       </Intro>
       {SERVICE_GROUPS.map((group, index) => (

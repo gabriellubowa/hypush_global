@@ -64,7 +64,7 @@ interface Props {
 }
 
 export const PageIntro = ({ variant = "page", ...props }: Props) => (
-  <StyledIntro $variant={variant}>
+  <StyledIntro $variant={variant} data-aos="fade-up">
     {props.eyebrow && <Eyebrow>{props.eyebrow}</Eyebrow>}
     <StyledTitle $variant={variant}>{props.title}</StyledTitle>
     {props.lead && <StyledLead>{props.lead}</StyledLead>}

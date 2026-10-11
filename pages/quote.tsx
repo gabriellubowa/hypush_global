@@ -62,7 +62,7 @@ export default function Quote() {
             lead="Tell us about the music, what you need and what you're working with. We'll review it and come back with a proposal. Three quick steps."
           />
         </IntroColumn>
-        <FormColumn aria-label="Project request form">
+        <FormColumn aria-label="Project request form" data-aos="fade-up" data-aos-delay="100">
           <ProjectForm />
         </FormColumn>
       </Split>

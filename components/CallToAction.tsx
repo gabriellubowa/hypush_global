@@ -92,7 +92,7 @@ const GhostButton = styled(Link)`
 `;
 
 export const CallToAction = () => (
-  <StyledBand aria-labelledby="cta-heading">
+  <StyledBand aria-labelledby="cta-heading" data-aos="fade-up">
     <h2 id="cta-heading">Got a Release Coming Up?</h2>
     <p>
       Tell us about the music, the date and the goal. We will come back with a

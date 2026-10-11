@@ -95,7 +95,13 @@ export function Accordion({ items }: { items: ReadonlyArray<IAccordionItem> }) {
         const isOpen = openIndex === ALL_OPEN || openIndex === index;
         const panelId = `${item.id}-panel`;
         return (
-          <Item key={item.id} id={item.id} $isOpen={isOpen}>
+          <Item
+            key={item.id}
+            id={item.id}
+            $isOpen={isOpen}
+            data-aos="fade-up"
+            data-aos-delay={String(Math.min(index, 6) * 40)}
+          >
             <Trigger
               type="button"
               aria-expanded={isOpen}

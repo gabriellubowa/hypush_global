@@ -188,13 +188,13 @@ export const LegalDocument = ({ title, lead, updatedLabel, metadata, sections }:
   return (
     <SiteLayout title={title} metadata={metadata} pageType="WebPage">
       <Shell>
-        <DocHeader>
+        <DocHeader data-aos="fade-up">
           <Title>{title}</Title>
           <Meta>{updatedLabel}</Meta>
           {lead ? <Lead>{lead}</Lead> : null}
         </DocHeader>
 
-        <Toc aria-label="Contents">
+        <Toc aria-label="Contents" data-aos="fade-up">
           <h2>Contents</h2>
           <ol>
             {withContact.map((section, index) => (
@@ -209,7 +209,7 @@ export const LegalDocument = ({ title, lead, updatedLabel, metadata, sections }:
 
         <Article>
           {withContact.map((section, index) => (
-            <Section key={section.id} id={section.id}>
+            <Section key={section.id} id={section.id} data-aos="fade-up">
               <h2>
                 {index + 1}. {section.heading}
               </h2>

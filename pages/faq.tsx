@@ -42,7 +42,7 @@ export default function Faq({ groups }: Props) {
         lead="How campaigns work, who we work with and what to expect when you bring us a release."
       />
       {groups.map((group) => (
-        <Group key={group.tag} aria-label={group.tag}>
+        <Group key={group.tag} aria-label={group.tag} data-aos="fade-up">
           <h2>{group.tag}</h2>
           <Accordion
             items={group.items.map((item) => ({

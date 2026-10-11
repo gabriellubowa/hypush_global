@@ -174,7 +174,12 @@ export const CaseStudyGallery = ({ items }: Props) => {
       {/* Dense square mosaic — same idea as iOS Photos: tight gutters, no captions on tiles. */}
       <ul className="m-0 grid list-none grid-cols-3 gap-[2px] p-0 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         {items.map((item, index) => (
-          <li key={item.id} className="min-w-0">
+          <li
+            key={item.id}
+            className="min-w-0"
+            data-aos="fade-up"
+            data-aos-delay={String((index % 8) * 40)}
+          >
             <button
               type="button"
               onClick={(event) => openAt(index, event.currentTarget)}

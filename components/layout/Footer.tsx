@@ -349,7 +349,7 @@ export const Footer = () => {
   const isDark = colorMode === "dark";
 
   return (
-  <Wrapper id="site-footer">
+  <Wrapper id="site-footer" data-aos="fade-up">
     <Top>
       <LogoRow>
         <LogoLink href="/" aria-label="HYPush home">

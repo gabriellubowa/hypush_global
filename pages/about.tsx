@@ -47,21 +47,28 @@ export default function About() {
           <h1
             id="advantage-heading"
             className="m-0 max-w-[16ch] text-5xl font-bold leading-[0.95] tracking-tighter text-[var(--color-text)] sm:text-6xl"
+            data-aos="fade-up"
           >
             The Infrastructure Advantage.
           </h1>
 
-          <p className="mt-8 max-w-[54ch] text-lg leading-relaxed text-neutral-500 sm:text-xl dark:text-neutral-400">
+          <p
+            className="mt-8 max-w-[54ch] text-lg leading-relaxed text-neutral-500 sm:text-xl dark:text-neutral-400"
+            data-aos="fade-up"
+            data-aos-delay="80"
+          >
             We do not run on guesswork or empty hype. We run on data, scalable
             technology, and deep industry relationships. Every campaign is
             engineered for clear, accountable execution.
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-10 sm:mt-16 sm:grid-cols-3 sm:gap-8">
-            {PILLARS.map((pillar) => (
+            {PILLARS.map((pillar, index) => (
               <article
                 key={pillar.title}
                 className="border-t-2 border-[var(--color-text)] pt-6 sm:border-l-2 sm:border-t-0 sm:pl-6 sm:pt-0"
+                data-aos="fade-up"
+                data-aos-delay={String(100 + index * 90)}
               >
                 <h2 className="m-0 p-0 text-base font-semibold tracking-tight text-[var(--color-text)] sm:text-lg">
                   {pillar.title}
@@ -73,7 +80,10 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-14 flex flex-wrap items-center gap-4 sm:mt-16">
+          <div
+            className="mt-14 flex flex-wrap items-center gap-4 sm:mt-16"
+            data-aos="fade-up"
+          >
             <Link
               href={BRAND.CONTACT_URL}
               className="inline-flex items-center justify-center bg-black px-7 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-black"
@@ -92,15 +102,20 @@ export default function About() {
 
       {/* Execution & Scale — 2×2 technical grid */}
       <div className="mx-auto w-full max-w-[var(--page-max-width)] px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
-        <h2 className="m-0 pb-10 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+        <h2
+          className="m-0 pb-10 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl"
+          data-aos="fade-up"
+        >
           Execution &amp; Scale
         </h2>
 
         <div className="grid grid-cols-1 border-t border-l border-neutral-200 dark:border-neutral-800 sm:grid-cols-2">
-          {CAPABILITIES.map((item) => (
+          {CAPABILITIES.map((item, index) => (
             <article
               key={item.kicker}
               className="border-b border-r border-neutral-200 p-6 sm:p-8 dark:border-neutral-800"
+              data-aos="fade-up"
+              data-aos-delay={String(80 + index * 70)}
             >
               <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">
                 {item.kicker}
